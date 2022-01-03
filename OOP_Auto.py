@@ -111,7 +111,7 @@ while menu.zapnuto == 1:
     except:
         print("Zadali jste neplatnou volbu")
 
-
+#nová poznámka
 
 
 
