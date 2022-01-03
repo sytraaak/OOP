@@ -17,3 +17,5 @@ jarda.vek = 67
 
 pepa.pozdrav()
 jarda.pozdrav()
+
+#nová poznámka

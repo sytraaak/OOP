@@ -14,3 +14,5 @@ class Dice:
 help(int)
 dice = Dice()
 print(dice.roll(6))
+
+#nová poznámka
