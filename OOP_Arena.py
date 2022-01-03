@@ -15,4 +15,4 @@ help(int)
 dice = Dice()
 print(dice.roll(6))
 
-#nová poznámka a
+#nová poznámka aa
