@@ -1,16 +1,10 @@
 import random
 
 class Dice:
-    """
-    Nekonečně stěnná kostka
-    """
-    def __init__(self, sides=6): #kontruktor s klíčovým argumentem nastaveným v základu na 6
-        """
-        Konstruktor
-        """
-        self.__sides = sides #definice počtu stěn v kontruktoru - je potřeba, aby bylo zadáno např. self.
+    def __init__(self, sides=6): #kontruktor s parametrem v základu nastaveném na 6
+        self.__sides = sides #atribut počtu stěn - atributy se vytvářejí -> self.název_atributu - pokud dám před název __ bude privátní (zapouzdřený)
 
-    def __str__(self): #textová reprezentace objektu - pokud není definována, tak pouze vypíše cestu k třídě
+    def __str__(self): #textová reprezentace objektu - pokud není definována, tak pouze vypíše cestu k instanci
         return str(f"Kostka s {self.__sides} stěnami")
 
     def show_sides(self): #zobrazí počet stran
@@ -19,18 +13,18 @@ class Dice:
     def throw(self):
         return random.randint(1,self.__sides)
 
-sestistenna = Dice() #bude mít 6 stěn protože v základu je nastaveno na 6
-desetistenna = Dice(10) #bude 10ti stenná, protože je zadán parametr
+kostka = Dice() #bude mít 6 stěn parametr v kontruktoru je nastaven na sides=6
+desetistenna = Dice(10) #bude 10ti stenná, protože parametr zadaný do kontruktoru je 10
 
-print(sestistenna.show_sides())
+print(kostka.show_sides()) #zobrazí počet stěn instance
 print(desetistenna.show_sides())
-print(sestistenna.throw()) #hod 6ti stěnnou kostkou
-print(sestistenna) #zobrazí textovou reprezentaci objektu ze __str__
+print(kostka.throw()) #hod 6ti stěnnou kostkou
+print() #zobrazí textovou reprezentaci objektu ze __str__
 
 #hod šestistěnnou
-print(f"\n{sestistenna}")
+print(f"\n{kostka}")
 for _ in range(10):
-    print(sestistenna.throw(), end=" ")
+    print(kostka.throw(), end=" ")
 
 #hod desetistěnnou
 print(f"\n{desetistenna}")
