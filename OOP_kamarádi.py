@@ -1,21 +1,19 @@
-#Vytvořte aplikaci, evidující dva lidi. Každý člověk má jméno, věk a přítele. Každý člověk se také umí představit a to
-# tak, že vypíše své jméno, věk a jméno svého kamaráda. Vytvořte v aplikaci 2 lidi, kteří se navzájem kamarádí, a nechte je se představit.
-
 class Clovek:
+    def __init__(self, jmeno=None, vek=None, kamarad=None):
+        self.__jmeno = jmeno
+        self.__vek = vek
+        self.__kamarad = kamarad
+
+    def __str__(self):
+        return f"{self.__jmeno}, {self.__vek} let"
+
     def pozdrav(self):
-        print(f"Ahoj, já jsem {self.jmeno}, je mi {self.vek} let a můj kamarád je {self.kamarad}")
+        print(f"Ahoj, já jsem {self.__jmeno}, je mi {self.__vek} let a můj kamarád je {self.__kamarad}")
 
-pepa = Clovek()
-pepa.jmeno = "Pepa Novák"
-pepa.kamarad = "Jarda Kornelie"
-pepa.vek = 33
-
-jarda = Clovek()
-jarda.jmeno = "Jarda Kornelie"
-jarda.kamarad = "Pepa Novák"
-jarda.vek = 67
+pepa = Clovek("Pepa Novák", 35, "Jarda Kornelie") #není možné zadat do třetího parametru pouze jarda, protože jarda ještě nevznikl
+jarda = Clovek("Jarda Kornelie", 27, pepa) #zde, protože již existuje instance pro pepa, tak si systém informace dotáhne
 
 pepa.pozdrav()
 jarda.pozdrav()
 
-#nová poznámka aa
+
