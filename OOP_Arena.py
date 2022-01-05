@@ -18,22 +18,22 @@ class Dice:
 
 
 #vytvoření instance
-kostka = Dice() #bude mít 6 stěn parametr v kontruktoru je nastaven na sides=6
-desetistenna = Dice(10) #bude 10ti stenná, protože parametr zadaný do kontruktoru je 10
-nova_kostka = eval(repr(desetistenna)) #vytvoří kopii kostky desetistenne
-
-
-print(kostka.show_sides()) #zobrazí počet stěn instance
-print(desetistenna.show_sides()) #zobrazí počet stěn instance desetistenna
-print(nova_kostka.show_sides()) #zobrazí počet stěn kopie kostky
-print(kostka.throw()) #hod 6ti stěnnou kostkou
-
-#hod šestistěnnou
-print(f"\n{kostka}")  #zobrazí textovou reprezentaci objektu ze __str__
-for _ in range(10):
-    print(kostka.throw(), end=" ")
-
-#hod desetistěnnou
-print(f"\n{desetistenna}")
-for _ in range(10):
-    print(desetistenna.throw(), end=" ")
+# kostka = Dice() #bude mít 6 stěn parametr v kontruktoru je nastaven na sides=6
+# desetistenna = Dice(10) #bude 10ti stenná, protože parametr zadaný do kontruktoru je 10
+# nova_kostka = eval(repr(desetistenna)) #vytvoří kopii kostky desetistenne
+#
+#
+# print(kostka.show_sides()) #zobrazí počet stěn instance
+# print(desetistenna.show_sides()) #zobrazí počet stěn instance desetistenna
+# print(nova_kostka.show_sides()) #zobrazí počet stěn kopie kostky
+# print(kostka.throw()) #hod 6ti stěnnou kostkou
+#
+# #hod šestistěnnou
+# print(f"\n{kostka}")  #zobrazí textovou reprezentaci objektu ze __str__
+# for _ in range(10):
+#     print(kostka.throw(), end=" ")
+#
+# #hod desetistěnnou
+# print(f"\n{desetistenna}")
+# for _ in range(10):
+#     print(desetistenna.throw(), end=" ")
