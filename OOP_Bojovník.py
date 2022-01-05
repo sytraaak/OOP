@@ -109,8 +109,9 @@ dice = Dice(10)
 #bojovnice
 who = Fighter("Who Veliký", 80, 15, 3, dice)
 krysak = Fighter("Krysák Zlořádný", 50, 4, 8, dice)
+marta = Fighter("Marťa", 200, 20, 1, dice, 3, 10)
 #arena
-arena = Arena(who, krysak, dice)
+arena = Arena(who, marta, dice)
 #souboj
 arena.fight()
 
