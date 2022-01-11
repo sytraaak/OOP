@@ -4,41 +4,50 @@
 
 class Person:
     def __init__(self, unava=0):
-        self.__unava = unava
+        self._unava = unava
 
     def behani(self, vzdalenost):
-        if self.__unava + vzdalenost > 20:
+        if self._unava + vzdalenost > 20:
             print("Tuto vzdalenost už neuběhnu")
         else:
-            self.__unava += vzdalenost
+            self._unava += vzdalenost
 
     def spanek(self, hodiny):
-        if self.__unava - (hodiny * 10) < 0:
+        if self._unava - (hodiny * 10) < 0:
             print("Takto dlouho není možné spát")
         else:
-            self.__unava -= (hodiny * 10)
+            self._unava -= (hodiny * 10)
 
     def zobraz(self):
-        return self.__unava
+        return f"Únava: {self._unava}"
 
-josef = Person()
-josef.behani(4)
-print(josef.zobraz())
-josef.behani(4)
-print(josef.zobraz())
-josef.behani(4)
-print(josef.zobraz())
-josef.behani(4)
-print(josef.zobraz())
-josef.behani(4)
-print(josef.zobraz())
-josef.behani(4)
-print(josef.zobraz())
-josef.spanek(2)
-print(josef.zobraz())
-josef.behani(20)
-josef.spanek(2)
-print(josef.zobraz())
+class Pythonista(Person):
+    def __init__(self, unava, ide):
+        super().__init__(unava)
+        self.__ide = ide
+        self.radky = 0
+
+    def programuj(self, radky):
+        if self._unava + ((self.radky + radky) / 10) > 20:
+            print(f"Tohle už nezvládnu\nNaprogramuji už pouze {10*(round(20 - self._unava - (self.radky / 10),1))} řádku")
+        else:
+            self.radky += radky
+            if self.radky + radky >= 10:
+                self._unava += (self.radky - (self.radky % 10)) / 10
+                self.radky = self.radky % 10
+
+    def __str__(self):
+        return f"Řádky: {self.radky} Únava: {self._unava}"
+
+poskok = Pythonista(0, "PyCharm")
+print(poskok)
+poskok.behani(19)
+poskok.programuj(1)
+print(poskok)
+poskok.programuj(8)
+poskok.programuj(8)
+print(poskok.radky)
+
 
 
 
